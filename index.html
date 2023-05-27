@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<head>
+    <title>Exam</title>
+</head>
+<body>
+    <h1>hunting world</h1>
+    <p>the world's top hunting <strong>animal</strong> related information</p>
+    <h2>list of animals</h2>
+    <ul>
+        <li>lion</li>
+        <li>tiger</li>
+        <li>leopard</li>
+    </ul>
+</body>
+<script>
+    //select a un-ordered list with a tag name
+    var unorderedList = document.getElementsByTagName('ul')[0];
+    // change the background color of the first li in the ul
+    var firstListItem = document.querySelector('ul li:first-child');
+    firstListItem.style.backgroundColor = 'yellow';
+    //iterate all children elements of list and change text color to orange
+    var unorderedList = document.querySelector('ul');
+    var listItems = unorderedList.children;
+
+    for (var i = 0; i < listItems.length; i++) {
+    listItems[i].style.color = 'orange';
+    }
+    //remove middle li (tiger) from the list without using index of child element/node
+    var unorderedList = document.querySelector('ul');
+    var listItems = unorderedList.children;
+    var middleListItem;
+
+// Find the middle <li> element
+    if (listItems.length % 2 === 1) {
+        middleListItem = listItems[Math.floor(listItems.length / 2)];
+    } else {
+    middleListItem = listItems[listItems.length / 2 - 1];
+    }
+
+// Remove the middle <li> element
+    middleListItem.remove();
+
+    //also add one general event on list: when user click on li it should alert the text of li
+    var listItems = document.querySelectorAll('ul li');
+
+    function handleClick(event) {
+        var clickedListItem = event.target;
+        var listItemText = clickedListItem.textContent;
+        alert(listItemText);
+    }
+
+    for (var i = 0; i < listItems.length; i++) {
+        listItems[i].addEventListener('click', handleClick);
+    }
+
+    //apply green border of 3px on heading "hunting world"
+    var heading = document.querySelector('h1');
+    heading.style.border = '3px solid green';
+
+</script>
+</html>

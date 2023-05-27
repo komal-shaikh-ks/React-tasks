@@ -8,13 +8,20 @@ import Start from './display data from api';
 import reportWebVitals from './reportWebVitals';
 import {Routers,About,Contact} from './react routers';
 import {BrowserRouter,Routes,Route} from "react-router-dom";
+import Basic from './basic';
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+// import Apps from './render props';
+import FilterImage from './filterImage';
 root.render(
   <React.StrictMode>
     {/* <App /> */}
     {/* <Main/>
     <Start/>
     <Load/> */}
+    <FilterImage/>
+    {/* <Apps></Apps> */}
+    <Basic/>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Routers/>}></Route>
